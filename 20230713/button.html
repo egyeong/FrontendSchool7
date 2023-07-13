@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼 만들기</title>
+    <style>
+        .button {
+            width: 88px;
+            height: 32px;
+            font-weight: Bold;
+            color: #CBD5DF;
+            background-color: #343F50;
+            border: 1px solid #2D3848;
+            box-shadow: inset 1px 1px 0 0 #47566d;
+        }
+
+        .btn1:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .btn1:active {
+            box-shadow: none;
+        }
+
+        .btn1:disabled {
+            border: none;
+            color: #4A5568;
+            text-decoration: none;
+        }
+
+        .btn2 {
+            color: #439AFF;
+        }
+
+        .btn2:hover {
+            background-color: #439AFF;
+            color: white;
+            text-decoration: underline;
+            border: 1px solid #439AFF;
+            box-shadow: inset 1px 1px 0 0 skyblue;
+        }
+
+        .btn2:active {
+            box-shadow: inset 1px 1px 0 0 rgb(8, 57, 76);
+        }
+
+        .btn3 {
+            color: #f64747;
+        }
+
+        .btn3:hover {
+            background-color: #f64747;
+            color: white;
+            text-decoration: underline;
+            border: 1px solid #f64747;
+            box-shadow: inset 1px 1px 0 0 rgb(235, 135, 135);
+        }
+
+        .btn3:active {
+            box-shadow: inset 1px 1px 0 0 rgb(104, 15, 15);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button class="button btn1">Button</button>
+        <button class="button btn1" disabled>Button</button>
+    </div>
+
+    <div>
+        <button class="button btn2">Yes</button>
+    </div>
+
+    <div>
+        <button class="button btn3">Del</button>
+    </div>
+</body>
+
+</html>
