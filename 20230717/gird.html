@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .container {
+            width: 600px;
+            height: 600px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            grid-template-rows: 1fr 2fr 1fr;
+            gap: 10px;
+        }
+
+        header {
+            background-color: red;
+            grid-column: 1/-1;
+        }
+
+        section {
+            background-color: yellow;
+        }
+
+        aside {
+            background-color: green;
+        }
+
+        footer {
+            background-color: royalblue;
+            grid-column: 1/-1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>header</header>
+        <section>section</section>
+        <aside>aside</aside>
+        <footer>footer</footer>
+    </div>
+
+
+</body>
+
+</html>

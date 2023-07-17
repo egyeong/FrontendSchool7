@@ -1,0 +1,48 @@
+h1,
+p {
+    margin: initial;
+    font-size: inherit;
+}
+
+.wrapper {
+    background-image: url(images/bg.png);
+    width: 1280px;
+    background-size: cover;
+    background-position: center;
+    padding: 57px 0;
+    font-family: Arial, sans-serif;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+.contents {
+    width: 300px;
+    margin: 0 auto;
+    background-color: #9C6035;
+    border-radius: 0 0 30px 30px;
+    border-bottom: 10px solid #46260E;
+}
+
+.contents h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #FFFFFF;
+    padding: 10px 20px;
+}
+
+.contents p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.4px;
+    color: #E8BC9C;
+    margin: 0 20px;
+    padding-bottom: 46px;
+}
+
+/* body img {
+    width: 300px;
+    height: 300px;
+} */
