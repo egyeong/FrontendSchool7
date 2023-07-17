@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 200px 150px;
+    }
+
+    .item {
+      background-color: skyblue;
+    }
+
+    .item:nth-child(odd) {
+      background-color: seagreen;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item">A</div>
+    <div class="item">B</div>
+    <div class="item">C
+    </div>
+    <div class="item">D</div>
+    <div class="item">E</div>
+    <div class="item">F</div>
+  </div>
+
+
+</body>
+
+</html>
