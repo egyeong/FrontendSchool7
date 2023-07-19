@@ -1,0 +1,64 @@
+a,
+h1,
+h2 {
+    text-decoration: none;
+    font-size: unset;
+    font-weight: unset;
+    margin: initial;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+header {
+    overflow: hidden;
+    background-color: white;
+    padding: 10px;
+}
+
+h1 {
+    background-repeat: no-repeat;
+    background-clip: cover;
+    float: left;
+}
+
+header>a {
+    float: right;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+main h2 img {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+main h2 p {
+    text-align: center;
+    margin: 10px auto;
+}
+
+form {
+    margin: 10px auto;
+    width: 400px;
+    align-items: center;
+}
+
+label {
+    width: 400px;
+    margin: 15px;
+}
+
+button {
+    width: 400px;
+    background-color: green;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
