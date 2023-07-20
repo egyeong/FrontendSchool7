@@ -1,0 +1,69 @@
+.heart-title {
+  /* font-size: 40px; */
+  font-family: 'Pretendard-Bold';
+  line-height: 1;
+  padding: 0.5em 0 0.5em 2em;
+  background-image: url(../img/heart.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 2em;
+  margin-bottom: 16px;
+}
+
+/* main layout */
+.main {
+  display: flex;
+  gap: 40px;
+}
+
+.main > section {
+  flex-basis: 0;
+}
+
+.main .main-form {
+  min-width: 360px;
+  padding: 56px 39px 56px 0;
+  border-right: 1px solid #ff4f6e;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+.main .main-diary {
+  flex-grow: 2;
+}
+
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+  .main .main-form {
+    min-width: 100%;
+    border: 0;
+    padding: 0;
+  }
+}
+
+/* article */
+.diary-article {
+  border-width: 4px 1px 1px 1px;
+  border-style: solid;
+  border-color: #677880;
+  padding: 60px 48px;
+}
+
+.diary-article header {
+  display: flex;
+  flex-wrap: wrap;
+}
+.article-title {
+  font-family: 'Pretendard-Bold';
+}
+
+.article-time {
+  font-size: 12px;
+  color: #677880;
+}
+.article-content {
+  color: #5a6a72;
+  font-size: 14px;
+  line-height: 140%;
+}
