@@ -5,51 +5,53 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    }
-    
-    .wrap {
-    border: 2px dashed red;
-    }
-    
-    .card {
+}
+
+.wrap {}
+
+.card {
     width: 200px;
     height: 200px;
     background-color: skyblue;
-    
+
     /* 기준 */
     position: relative;
-    
-    transition: transform 0.5s cubic-bezier(0.88, 0.42, 0.56, 1.26);
+
+    transition: transform 0.8s cubic-bezier(0.88, 0.42, 0.56, 1.26);
     transform-style: preserve-3d;
-    transform: perspective(200px) scale(0.5);
-    }
-    
-    .front,
-    .back {
+    transform: perspective(400px) scale(0.5);
+
+    /* transform-origin: 100% 100%; */
+}
+
+.front,
+.back {
     width: 100%;
     height: 100%;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     font-size: 40px;
     color: #fff;
-    
+
     position: absolute;
-    
+
     backface-visibility: hidden;
-    }
-    .front {
+}
+
+.front {
     background-color: rgba(46, 139, 87, 0.8);
-    }
-    .back {
+}
+
+.back {
     background-color: rgba(255, 166, 0, 0.8);
     transform: rotateY(180deg);
-    }
-    
-    /* hover */
-    .wrap:hover .card {
+}
+
+/* hover */
+.wrap:hover .card {
     /* transform: rotateY(180deg); */
-    transform: perspective(200px) scale(1.2) rotateY(900deg);
-    }
+    transform: perspective(400px) scale(1) rotateY(900deg);
+}
