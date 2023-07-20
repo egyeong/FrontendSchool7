@@ -4,14 +4,15 @@
 
 body {
     background-color: #FFEDED;
+    overflow: hidden;
 }
 
 .character {
-    background-color: skyblue;
     position: relative;
     width: 330px;
     height: 400px;
     margin: 100px auto;
+    transition: all 0.3s;
 }
 
 .face {
@@ -34,11 +35,11 @@ body {
     z-index: 10;
 }
 
-.face-shadow {
+.face-border {
     background: black;
-    width: 412px;
+    width: 411px;
     height: 210px;
-    left: -12%;
+    left: -11.5%;
     bottom: -5px;
 }
 
@@ -68,12 +69,50 @@ body {
     height: 16px;
     border-radius: 100%;
     z-index: 20;
+    transition: all 0.3s;
 }
 
 .eye-left {
-    transform: translate(125px, 200px);
+    transform: translate(126px, 200px);
 }
 
 .eye-right {
     transform: translate(185px, 200px);
+}
+
+.nose {
+    background: black;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    z-index: 40;
+    transform: translate(156px, 222px);
+}
+
+.cheek {
+    position: absolute;
+    background: white;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    z-index: 30;
+}
+
+.cheek-left {
+    transform: translate(120px, 225px);
+}
+
+.cheek-right {
+    transform: translate(159px, 225px);
+}
+
+.character:hover {
+    transform: rotate(360deg) scale(3);
+    transition: all 0.3s;
+}
+
+.character:hover .eye {
+    background: red;
+    transition: all 0.3s;
 }
