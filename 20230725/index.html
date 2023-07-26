@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .txt-hide {
+            /* 스크린리더는 읽게 하되(0px을 주지 않는 이유) 체크박스를 없애고 커스터마이징 하기 위함 */
+            overflow: hidden;
+            width: 1px;
+            height: 1px;
+
+            clip-path: inset(50%);
+        }
+
+
+        .labl-hold {
+            position: relative;
+        }
+
+        .labl-hold::before {
+            /* 블록으로 하면 줄바꿈이 될 거라, 인라인에서 바꾸되 줄바꿈은 안 되도록 */
+            display: inline-block;
+            content: '';
+            width: 22px;
+            height: 22px;
+            margin-right: 10px;
+            border: 1px solid black;
+            vertical-align: -5px;
+        }
+
+        .inphold:focus-visible+.labl-hold::before {
+            outline: 2px solid teal;
+            outline-offset: 3px;
+        }
+
+        .labl-hold::after {
+            content: '';
+            /* 포지션을 쓰면 display blok이 됨. 기준점이 없으면 최상위요소인 body가 기준점 */
+            position: absolute;
+            top: -3px;
+            left: 20px;
+
+            width: 22px;
+            height: 22px;
+            background-image: url(./images/checkmark.png);
+            background-size: 22px;
+            background-repeat: no-repeat;
+
+            background: url(./images/checkmark.png) 0 0/22px no-repeat;
+
+            opacity: 0;
+            transition: all 0.3s;
+            /* 좀더 효과를 주고 싶으면 ease사용 */
+            /* transition: all 0.3s ease; */
+        }
+
+        .inphold:checked+.labl-hold::after {
+            left: 0;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="inpHold" class="inphold txt-hide">
+    <label for="inpHold" class="labl-hold">로그인 상태 유지</label>
+
+</body>
+
+</html>
