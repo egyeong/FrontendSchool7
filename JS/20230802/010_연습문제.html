@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+        // 1번째 풀이: https://school.programmers.co.kr/learn/courses/30/lessons/120906
+        let answer = 0
+        let inputValue = 1234
+
+        inputValue = '' + inputValue // 권장하지 않습니다!
+        answer += +inputValue[0]
+        answer += +inputValue[1]
+        answer += +inputValue[2]
+        answer += +inputValue[3]
+        answer
+
+        // 2번째 풀이
+        let answer2 = 0
+        let inputValue2 = 1234
+
+        inputValue2 = inputValue2.toString()
+        answer2 += parseInt(inputValue2[0])
+        answer2 += parseInt(inputValue2[1])
+        answer2 += parseInt(inputValue2[2])
+        answer2 += parseInt(inputValue2[3])
+        answer2
+
+
+        // 3번째 풀이(C언어 스타일)
+        let answer3 = 0
+        let inputValue3 = 1234
+
+        answer3 = answer3 + (inputValue3 % 10) // 0 -> 4
+        inputValue3 = parseInt(inputValue3 / 10) // 1234 -> 123
+
+        answer3 = answer3 + (inputValue3 % 10) // 4 -> 7
+        inputValue3 = parseInt(inputValue3 / 10) // 123 -> 12
+
+        answer3 = answer3 + (inputValue3 % 10) // 7 -> 9
+        inputValue3 = parseInt(inputValue3 / 10) // 12 -> 1
+
+        answer3 = answer3 + (inputValue3 % 10) // 9 -> 10
+        inputValue3 = parseInt(inputValue3 / 10) // 1 -> 0
+
+
+        // 4번째 풀이(안배운 reduce 사용!)
+        let inputValue4 = 12341234
+
+        inputValue4.toString().split('').reduce((a, c) => a + parseInt(c), 0)
+
+    </script>
+</body>
+
+</html>
