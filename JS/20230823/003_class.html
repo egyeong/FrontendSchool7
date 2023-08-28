@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        class Robot {
+            constructor(name) {
+                this.myName = name;
+            }
+
+            sayYourName() {
+                console.log(`제 이름은 ${this.myName} 입니다`);
+            }
+        }
+
+        ///// 실습: class문법으로 바꿔보기.
+
+        // function Parent() {
+        //     this.name = '재현';
+        // }
+        // Parent.prototype.rename = function (name) {
+        //     this.name = name;
+        // }
+        // Parent.prototype.sayName = function () {
+        //     console.log(this.name);
+        // }
+
+        class Parent {
+            constructor(name) {
+                this.name = name;
+            }
+            rename(name) {
+                this.name = name;
+            }
+            sayName() {
+                console.log(this.name);
+            }
+        }
+
+        ///// 강사님 답변.
+        class Me {
+            constructor(myAddress) {
+                this.name = '재현';
+                this.address = myAddress;
+                this.phoneNum = '010-0000-0000';
+            }
+
+            canWalk() {
+                console.log('재현 걷는다.');
+            }
+            teaching(student) {
+                student.levelUp();
+            }
+        }
+
+        class Lion {
+            constructor() {
+                this.level = 1;
+            }
+            levelUp() {
+                this.level++;
+            }
+        }
+
+    </script>
+</body>
+</html>

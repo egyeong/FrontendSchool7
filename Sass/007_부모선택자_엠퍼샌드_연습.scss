@@ -1,0 +1,39 @@
+// 우리가 원하는 결과물
+// (강사님)참고로 저라면 반복문 + array 사용할 겁니다.
+
+// .box-1{
+//     background-color: red;
+// }
+// .box-2{
+//     background-color: green;
+// }
+// .box-3{
+//     background-color: blue;
+// }
+
+// 위 코드를 더 단순화 한다면: 순회해서, 색깔은 변수로 만들 것. 어레이로 해서 인덱스로 뽑아낼 것.
+// 지금은 부모선택자 연습 중이니까 하지 않을 것.
+
+.box {
+  &-1 {
+    background-color: red;
+  }
+
+  &-2 {
+    background-color: green;
+  }
+
+  &-3 {
+    background-color: blue;
+  }
+}
+
+div {
+  &:hover {
+    background-color: red;
+  }
+}
+
+//div:hover {
+//     background-color: red;
+//}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="https://www.naver.com" class="link">네이버 링크입니다만..</a>
+
+    <form action="">
+        <button type="submit" class="submit">제출</button>
+    </form>
+
+    <script>
+        const link = document.querySelector('.link');
+        link.addEventListener('click', (event) => {
+            console.log('clicked');
+            // event.preventDefault();
+        })
+
+        const myForm = document.querySelector('form');
+        myForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            // 페이지가 새로고침 되지 않고, 콘솔에만 계속 찍히는 것을 발견.
+            console.log('submit!!');
+        })
+
+        // 오른쪽 마우스 클릭 막기.
+        document.addEventListener('contextmenu', (event) => {
+            event.preventDefault();
+            alert("해당 페이지는 오른쪽 클릭을 제한합니다!");
+        })
+    </script>
+</body>
+
+</html>

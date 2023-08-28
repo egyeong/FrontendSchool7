@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+body,
+button {
+    margin: 0;
+    font-family: 'SpoqaHanSansNeo-Regular';
+}
+
+button {
+    border: none;
+}
+
+.container-login {
+    background-color: #FFF;
+
+    width: 500px;
+    padding: 30px;
+    border-radius: 5px;
+    border: #C4C4C4 1px solid;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-shrink: 0;
+}
+
+.container-login .weniv-logo {
+    width: 138px;
+}
+
+.container-login .text-login {
+    text-align: center;
+    margin: 30px 0;
+
+    font-size: 16px;
+}
+
+.container-login .btn-login {
+    background-color: #2F80ED;
+
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+
+    color: #FFF;
+    font-size: 22px;
+}

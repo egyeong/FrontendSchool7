@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <article class="parent">
+        <ol>
+            <li><button class="btn-first" type="button">버튼1</button></li>
+            <li><button type="button">버튼2</button></li>
+            <li><button type="button">버튼3</button></li>
+        </ol>
+    </article>
+
+    <script>
+        const parent = document.querySelector('.parent');
+        parent.addEventListener('click', function (event) {
+            // parent.addEventListener('click', (event) {
+            // 3. 이렇게 화살표 함수로 바꾼다면, 아래 this는 window. (화살표 함수에서의 this는 상위 스코프를 가리키기 때문)
+
+            console.log(this);
+            // 2. 이벤트 리스너가 붙어 있는 요소 -> article
+            console.log(event.currentTarget);
+
+            // 1. 이벤트가 발생한 대상을 조건식으로 특정하기
+            if (event.target.nodeName === "BUTTON") {
+                event.target.innerText = "버튼4";
+            }
+        });
+
+        myObj = {
+            name: 'jaehyun',
+            walk() {
+                parent.addEventListener('click', () => {
+                    console.log(this.name, ' is walking');
+                })
+            }
+        }
+    </script>
+</body>
+
+</html>

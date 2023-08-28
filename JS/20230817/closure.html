@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+
+        const person = function () {
+            let age = 15;
+
+            return {
+                name: 'jaehyun',
+
+                getAge() {
+                    return age;
+                },
+
+                setAge(val) {
+                    age = val
+                }
+            }
+        }
+
+        const man = person();
+
+
+
+        const outer = function () {
+            let a = 1;
+
+            const inner = function () {
+                let b = 5;
+                let c = 6;
+                a = a + b + c;
+
+                console.log(a);
+            }
+
+            return inner;
+        }
+
+        const newInner = outer();
+
+        newInner();
+    </script>
+</body>
+</html>
+
+<!-- person이 return되면 person이라는 함수는 사라진다. 하지만 age는 메모리 어딘가에 남아있다. 이유는 내부 메서드에서 age를 참조하고 있기 때문이다.
+age에 대한 접근 권한은 return 객체에만 있다.
+getAge를 통해서만 접근하고, setAge를 통해서만 수정 가능하다.
+안전하다. -->

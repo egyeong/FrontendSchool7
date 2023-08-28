@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <!-- 주석입니다 주석. -->
+    <article class="cont">
+        <div class="cont">
+            <h1>안녕하세요 저는 이런 사람입니다.</h1>
+            <p>지금부터 자기소개 올리겠습니다</p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt incidunt voluptates laudantium fugit,
+            omnis
+            dolore itaque esse exercitationem quam culpa praesentium, quisquam repudiandae aut. Molestias qui quas ea
+            iure
+            officiis.
+            <strong class="cont">감사합니다!</strong>
+        </div>
+    </article>
+
+    <strong class="sayHi">
+        반갑습니다.
+    </strong>
+
+    <script>
+        const container = document.querySelector('.cont');
+
+        console.log(container.querySelector('strong').closest('.cont'))
+        // 2) strong태그를 찾아서 거기에서 가장 가까운 클래스 '.cont'를 가진 요소를 찾는다. (article -> div를 추가하면 div가 더 가까워서 div를 찾는다.)
+        // 주의: 1) 형제요소는 찾지 않는다. 2) 자기 자신부터 시작한다.
+        // strong에 class='cont'를 넣고 다시 찾아보면, 자기 자신을 찾는다.
+        // 자기 자신부터 찾고, 부모 요소로 올라가며 찾는다. 자기 부모 요소를 탐색할 때 이용한다(closest).
+
+        console.log(container.firstElementChild);
+        // <h1>안녕하세요 저는 이런 사람입니다.</h1>
+        console.log(container.firstChild);
+        // #text
+        console.log(container.lastElementChild);
+        console.log(container.lastChild);
+        console.log(container.nextElementSibling);
+        // article요소의 다음형제 = strong
+        console.log(container.nextSibling);
+        console.log(container.previousElementSibling);
+        // null, 이전 형제요소가 없기 때문.
+        console.log(container.previousSibling);
+        // 코드상 줄바꿈이 되어 있어서 줄바꿈이 출력된다.
+        console.log(container.children);
+        // 모든 직계자식을 찾는다.
+        // HTMLCollection이 출력된다. html요소만 선택하여 출력한다.
+        console.log(container.parentElement);
+        // 출력해보면 위 코드는 body태그를 찾고 있다는 것을 알 수 있다.
+        console.log(container.parentNode);
+        // 위와 동일한 결과.
+
+        const sayHi = document.querySelector('.sayHi');
+        sayHi.insertAdjacentHTML('beforebegin', '안녕하세요.');
+        sayHi.insertAdjacentHTML('afterbegin', '안녕히 가세요.');
+        sayHi.insertAdjacentHTML('beforeend', '안녕히 오세요.');
+        sayHi.insertAdjacentHTML('afterend', '안녕히 오지 마세요.');
+    </script>
+</body>
+</html>

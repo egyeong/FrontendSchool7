@@ -1,0 +1,13 @@
+// @mixin 이름(매개변수) //생성
+// @include 이름(인수)  //사용
+
+@mixin flex($align) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $align; // 이렇게 넣으면 따옴표가 넣어져서 들어갑니다.
+  align-items: #{$align}; // 이렇게 입력하면 따옴표가 사라지고 들어갑니다.
+}
+
+.one {
+  @include flex("center");
+}
