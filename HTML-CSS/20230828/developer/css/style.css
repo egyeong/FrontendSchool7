@@ -1,19 +1,149 @@
-body{
-    margin:0;
-    height: 5000px;
-    background: linear-gradient(to bottom, gold, royalblue);
-  }
-  svg{
-    width: 100%;
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  path{
-    fill:none;
-    stroke: white;
-    stroke-width:5px;
-    stroke-linecap:round ;
-    stroke-linejoin: round;
-  }
+body {
+  margin: 0;
+  height: 5000px;
+  background: linear-gradient(to bottom, gold, royalblue);
+}
+
+.wrap {
+  width: 100%;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  /* 버튼 가운데 정렬 */
+  text-align: center;
+}
+
+path {
+  fill: none;
+  stroke: white;
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* button(모달열기) */
+.btn-open {
+  /* 버튼은 인라인 블록 요소라서 마진을 쓰려면 블록으로 바꿔야 함, 또는 wrap(부모)에 text-align: center를 줘도 됨 */
+  /* display: block;
+  margin: 0 auto; */
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: none;
+  color: white;
+  height: 60px;
+  padding: 0 80px;
+  font-size: 22px;
+  border-radius: 20px;
+  /* 스크롤에 따라서 버튼이 서서히 나타나도록 코드 추가 */
+  opacity: 0;
+
+  /* 포인터는 enabled에만 적용할거라 삭제 */
+  /* cursor: pointer; */
+
+  /* hover에다가 작성하게 되면 hover될 때만 자연스럽게 변화하고 hover하지 않을 때는 적용이 안 됨. */
+  /* transition: all 0.3s; */
+  /* 배경과 텍스트가 서로 다른 시간 동안 변화하도록 설정 */
+  transition: all 0.5s, background-color 10s;
+}
+
+.btn-open:enabled {
+  cursor: pointer;
+}
+
+.btn-open:enabled:hover {
+  color: royalblue;
+  background-color: white;
+}
+
+.modal {
+  width: 300px;
+  height: 240px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 30px;
+
+  background-color: royalblue;
+  color: white;
+  text-align: center;
+}
+
+.modal ul {
+  list-style: none;
+  padding: 0;
+  /* 가로 배치 */
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 10px;
+}
+
+.modal ul a {
+  /* 인라인 속성이라 너비, 높이, 마진상하가 없음 */
+  display: inline-block;
+  background-color: white;
+  text-decoration: none;
+  padding: 8px 16px 6px 16px;
+  border-radius: 40px;
+  color: royalblue;
+}
+
+/* 모달 layout 위치 */
+.modal {
+  /* position: relative; */
+  /* 모달창이 가운데에 위치해야 함, position의 초기값은 static이고 btn-close의 absolute은 static이 아닌 값을 찾아간다. 그래서 fixed여도 위치에 문제가 없음.*/
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* 스크롤을 내려도 가운데에 위치한다. */
+  transform: translate(-50%, -50%);
+  /* 모달 위치를 맨 앞에 놓고 싶다면 사용. dim보다 앞에 나와야 해서 사용했다. */
+  z-index: 100;
+  /* 클릭했을 때 나타나야 하니까 기본설정 */
+  display: none;
+}
+
+/* 검은 배경 */
+.dim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* 블러효과, 필터 처리를 하게 되면 약간 버벅인다. */
+  /* backdrop-filter: blur(2px); */
+  /* 클릭했을 때 나타나야 하니까 기본설정 */
+  display: none;
+}
+
+/* +: 인접형제 */
+.modal.active,
+.modal.active+.dim {
+  display: block;
+}
+
+/* 모달 닫기 버튼 */
+.btn-close {
+  /* 논리적 마크업 순서 때문에 맨 밑에 위치하지만(html) 디자인상 맨 위에 존재해야 한다. */
+  position: absolute;
+  right: 20px;
+  top: 20px;
+
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 0;
+  background-color: white;
+
+  cursor: pointer;
+}
+
+.btn-close img {
+  width: 70%;
+  /* 이미지는 여백이 살짝 생기기 때문에 가운데로 조정한다. */
+  vertical-align: top;
+}

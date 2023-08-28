@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&display=swap');
+
+/* 초기화 */
+* {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 초기화 */
+img {
+    vertical-align: top;
+}
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(45deg, gold, royalblue);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    /* background-color: white; */
+
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+h1 {
+    font-weight: normal;
+    font-family: 'Neonderthaw', cursive;
+    color: green;
+    /* 단어를 깨지 않고 최소로 들어갈 수 있는 크기로 맞춘다. => 단어 기준으로 줄바꿈이 발생한다. */
+    width: min-content;
+    line-height: 0.7;
+    font-size: 160px;
+    text-align: center;
+    /* 폰트에 따라 라인하이트가 조금씩 달라서 글자가 가운데에 오게끔 조정했음 */
+    margin-top: -0.3em;
+}
+
+h1 span {
+    font-size: 0.7em;
+    color: rgb(43, 255, 0);
+}
+
+section {
+    background-color: white;
+    width: 400px;
+}
+
+.drop-target {
+    padding: 20px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.drag-item {
+    border: 1px solid #ddd;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+
+}
+
+.drag-item p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.drag-item img {
+    width: 48px;
+    height: 48px;
+    /* 위의 height 대신에 아래 코드 작성해도 됨 */
+    /* aspect-ratio: 1; */
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.drag-item~li {
+    margin-top: 10px;
+}
