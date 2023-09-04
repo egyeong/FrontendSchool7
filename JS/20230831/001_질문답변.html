@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+
+        ///// 콜백함수의 잦은 호출로 에러가 뜨는 코드.
+
+        // class Robot {
+        //     constructor(name, pw) {
+        //         this.name = name;
+        //         this.password = pw;
+        //     }
+
+        //     sayYourName() {
+        //         console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+        //     }
+
+        //     get password() {
+        //         return this.password;
+        //     }
+
+        //     set password(pw) {
+        //         this.password = pw;
+        //     }
+        // }
+        
+        ///// # 으로 메소드와 프로퍼티를 구분, 콜백을 방지.
+
+        class Robot {
+            #password
+
+            constructor(name, pw) {
+                this.name = name;
+                this.password = pw;
+            }
+
+            sayYourName() {
+                console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+            }
+
+            get password() {
+                return this._password;
+            }
+
+            set password(pw) {
+                this._password = pw;
+            }
+        }
+
+        // 언더바(_)를 활용했다.
+        
+        // class Robot {
+        //     constructor(name, pw) {
+        //         this.name = name;
+        //         this.password = pw;
+        //     }
+
+        //     sayYourName() {
+        //         console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+        //     }
+
+        //     get password() {
+        //         return this._password;
+        //     }
+
+        //     set password(pw) {
+        //         this._password = pw;
+        //     }
+        // }
+
+    </script>
+</body>
+</html>

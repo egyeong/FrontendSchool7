@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <p>hello <strong style="display: none;">world</strong> </p>
+    <script>
+        const elementP = document.querySelector('p');
+
+        // 요소 내 HTML 모두 반환
+        console.log(elementP.innerHTML)
+        // 렌더링된 텍스트를 반환(숨겨진 요소는 반환x)
+        console.log(elementP.innerText)
+        // 노드와 자손의 텍스트를 반환
+        console.log(elementP.textContent)
+    </script>
+
+</body>
+
+</html>

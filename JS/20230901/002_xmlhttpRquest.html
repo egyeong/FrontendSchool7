@@ -1,0 +1,23 @@
+<p>some text</p>
+<button>통신 시작!</button>
+
+<script>
+    const btn = document.querySelector('button');
+    const txt = document.querySelector('p');
+    btn.addEventListener('click', xhrRequest);
+
+    function xhrRequest() {
+        const xhrObj = new XMLHttpRequest();
+        xhrObj.open('GET', 'message.txt');
+
+        xhrObj.onreadystatechange = () => {
+            if (xhrObj.readyState === 4 && xhrObj.status === 200) {
+                const result = xhrObj.responseText;
+                txt.textContent = result;
+            }
+        };
+
+        xhrObj.send();
+    };
+
+</script>
