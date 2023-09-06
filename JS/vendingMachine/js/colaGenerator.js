@@ -50,14 +50,18 @@ class ColaGenerator {
       //   </button>
       //     </li>
 
+      // el.count: 재고
+
       const item = document.createElement("li");
-      const itemTemplate = `<button type="button" class="btn-cola on">
-    <img src="./img/cola-original.png" alt="" />
-    <span class="cola-name">Original_Cola</span>
-    <strong class="cola-price">1000원</strong>
-  </button>`;
+      const itemTemplate = `
+      <button type="button" class="btn-cola" data-item="${el.name}" data-count="${el.count}" data-price="${el.cost}" data-img="${el.img}">
+          <img src="./img/${el.img}" alt="${el.name}" />
+          <span class="cola-name">${el.name}</span>
+          <strong class="cola-price">${el.cost}원</strong>
+      </button>
+      `;
       item.innerHTML = itemTemplate;
-      this.itemList.append(item);
+      docFrag.append(item);
       //  4-2. data 배열을 순환하면서 템플릿화 해서 item의 자식요소로 집어넣고, item을 itemList 붙인다. 그런데 이건 좋지 않은 방법이다. 만들고 붙이고, 만들고 붙이고 ... 반복하는 형식이기 때문이다.
     });
 
